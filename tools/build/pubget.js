@@ -11,7 +11,7 @@ module.exports = {
 
 function pubGetDir(gulp, plugins, config) {
   return function() {
-    var travisFoldEnd = travisFoldStart(`pubget-${config.dir}`);
+    var travisFoldEnd = travisFoldStart('pubget-' + config.dir);
 
     return util.processToPromise(spawn(config.command, ['upgrade'], {
       stdio: 'inherit',
@@ -22,7 +22,7 @@ function pubGetDir(gulp, plugins, config) {
 
 function pubGetSubDir(gulp, plugins, config) {
   return function() {
-    var travisFoldEnd = travisFoldStart(`pubget-${config.command}-${config.dir}`);
+    var travisFoldEnd = travisFoldStart('pubget-' + config.command + '-' + config.dir);
 
     // We need to execute pubspec serially as otherwise we can get into trouble
     // with the pub cache...

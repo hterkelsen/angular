@@ -10,7 +10,7 @@ var yaml = require('js-yaml');
 
 module.exports = function(gulp, plugins, config) {
   return function() {
-    var travisFoldEnd = travisFoldStart(`dartanalyzer-${config.use_ddc ? 'ddc' : ''}-${config.dest}`);
+    var travisFoldEnd = travisFoldStart('dartanalyzer-' + (config.use_ddc ? 'ddc' : '') + '-' + config.dest);
     var tempFile = '_analyzer.dart';
 
     return util.forEachSubDirSequential(config.dest, function(dir) {
